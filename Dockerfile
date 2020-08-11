@@ -1,4 +1,4 @@
-# Pull base image from docker hub
+# Pull base image from docker hub in hf1
 # HF2 changes
 From tomcat:8-jre8 
 
