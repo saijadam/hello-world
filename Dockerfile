@@ -1,4 +1,4 @@
-# Pull base image from docker hubX
+# Pull base image from docker hubXY
 From tomcat:8-jre8 
 
 # Maintainer 
