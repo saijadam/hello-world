@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  become: true
+
+  tasks:
+  - name: Create a docker image using war file
+    command: docker build -t simple-devops-image:latest .
+    args: 
+        chdir: /opt/docker
+  
+  - name: Create a tag to image
+    command: docker tag simple-devops-image saijadam/simple-devops-image
+
+  - name: Push the image to dockerhub
+    command: docker push saijadam/simple-devops-image
+    ignore_errors: yes
+
+  - name: Delete the image from Ansible-Server
+    command: docker rmi simple-devops-image:latest saijadam/simple-devops-image tomcat
+    ignore_errors: yes
